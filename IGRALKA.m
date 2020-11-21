@@ -621,9 +621,7 @@ function [Pol,Nach,Kon]=KudaPoRusski(ZAPAS,FIG,Pol)
 Hod=input('\n Ваш ход в виде А1-В2 на латинице: \n');
 
 Nach(1)=Hod(1);
-Nach(2)=Hod(2);
-Kon(1)=Hod(3);
-Kon(2)=Hod(4);
+
 if Hod(1)=='R'
     Pol(:,:)=ZAPAS(FIG-1,:,:);
     figure(1);
@@ -631,6 +629,9 @@ if Hod(1)=='R'
     colormap hot
     [Pol,Nach,Kon]=KudaPoRusski(ZAPAS,FIG-1,Pol);
 else
+    Nach(2)=Hod(2);
+    Kon(1)=Hod(3);
+    Kon(2)=Hod(4);
     switch(Hod(1))
         case 'A'
             Nach=[size(Pol,1)+1-subs(Hod(2)),1];
