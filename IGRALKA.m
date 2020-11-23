@@ -67,7 +67,8 @@ if SchetBETTER~=0||SchetSIMPLE~=0
                 Pol=Pol2;
                 KonSoh=Kon;%%% Запоминаем последнюю шашку, если вдруг надо будет ещё есть
                 figure(1);
-                imagesc(Pol);
+                 I=pole(Pol);
+                 imshow(I);
                 colormap hot
                 if abs(Nach(1)-Kon(1))==1
                     flagOdKlet=true;
@@ -125,7 +126,8 @@ else
 end
 
 figure(1);
-imagesc(Pol);
+I=pole(Pol);
+imshow(I);
 colormap hot
 
 end
@@ -625,7 +627,8 @@ Nach(1)=Hod(1);
 if Hod(1)=='R'
     Pol(:,:)=ZAPAS(FIG-1,:,:);
     figure(1);
-    imagesc(Pol);
+    I=pole(Pol);
+    imshow(I);
     colormap hot
     [Pol,Nach,Kon]=KudaPoRusski(ZAPAS,FIG-1,Pol);
 else

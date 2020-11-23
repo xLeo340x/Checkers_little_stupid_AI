@@ -207,7 +207,8 @@ figure(1);
 %      a,f,a,f,a,f,a,f;
 %      f,a,f,a,f,a,f,a;
 %      a,f,a,f,a,f,a,f];
-imagesc(Pol);
+I=pole(Pol);
+imshow(I);
 colormap hot
 
 % Игрок всегда за буквы D и E
@@ -223,7 +224,8 @@ if OneTwo==2
     [Pol]=HodBota(Pol,a,b,c,d,e,f,OneTwo,SLO);
     
     figure(2);
-    imagesc(Pol);
+    I=pole(Pol);
+    imshow(I);
     colormap hot
 end
 
@@ -232,10 +234,11 @@ while flagloseIG&&flagloseBOT
     
     ZAPAS(FIG,:,:)=Pol(:,:);
     [ZAPAS,flagloseIG,Pol]=IGRALKA(Pol,a,b,c,d,e,f,OneTwo,ZAPAS,FIG);
-    
     figure(1);
-    imagesc(Pol);
-    colormap hot
+    I=pole(Pol);
+    imshow(I);
+%     
+%     colormap hot
     
     [SchetSIMPLE, SIMPLE, SchetBETTER, BETTER]=ChoiseMove(Pol,a,d,e,b,c,f,OneTwo); %%% Поменяли B C и D E местами. Теперь функция найдет все ходы бота, а не игрока. Удобно.
     if (SchetBETTER~=0||SchetSIMPLE~=0)&&flagloseIG
@@ -246,8 +249,9 @@ while flagloseIG&&flagloseBOT
     end
     
     figure(2);
-    imagesc(Pol);
-    colormap hot
+    I=pole(Pol);
+    imshow(I);
+%     colormap hot
    
     
     FIG=FIG+1;
@@ -267,7 +271,8 @@ if ~flagloseIG
          f,f,f,3,4,f,f,f;
          3,3,3,f,4,4,4,4];
      figure(2);
-    imagesc(Pol);
+     I=pole(Pol);
+    imshow(I);
     colormap hot
     pause(1);
     Pol=[f,5,f,5,f,2,2,2;
@@ -279,7 +284,8 @@ if ~flagloseIG
          f,f,f,3,f,3,f,f;
          f,f,f,f,3,f,f,f];
      figure(2);
-    imagesc(Pol);
+    I=pole(Pol);
+    imshow(I);
     colormap hot
     pause(1);
     end
@@ -295,7 +301,8 @@ else
          10,16,20,3,7,17,2,15;
          3,7,3,15,4,8,4,19];
      figure(2);
-    imagesc(Pol);
+     I=pole(Pol);
+     imshow(I);
     colormap hot
     pause(1);
 %     Pol=[f,5,f,5,f,2,2,2;
